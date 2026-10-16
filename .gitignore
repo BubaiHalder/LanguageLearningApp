@@ -41,3 +41,19 @@ example
 # generated native folders
 /ios
 /android
+
+# Local AI services: secrets, recordings, caches and isolated environments
+services/**/.env
+infra/.env
+services/**/.venv/
+services/**/__pycache__/
+services/**/.pytest_cache/
+services/**/dist/
+services/**/models/
+services/**/recordings/
+*.pyc
+services/runtime/
+/.env
+
+# Local Android Studio workspace and device metadata
+/.idea/

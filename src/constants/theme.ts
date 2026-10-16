@@ -6,21 +6,22 @@
 import '@/global.css';
 
 import { Platform } from 'react-native';
+import { studioThemes } from '../ui/tokens';
 
 export const Colors = {
   light: {
-    text: '#000000',
-    background: '#ffffff',
-    backgroundElement: '#F0F0F3',
-    backgroundSelected: '#E0E1E6',
-    textSecondary: '#60646C',
+    text: studioThemes.light.text,
+    background: studioThemes.light.background,
+    backgroundElement: studioThemes.light.surface,
+    backgroundSelected: studioThemes.light.surfaceRaised,
+    textSecondary: studioThemes.light.muted,
   },
   dark: {
-    text: '#ffffff',
-    background: '#000000',
-    backgroundElement: '#212225',
-    backgroundSelected: '#2E3135',
-    textSecondary: '#B0B4BA',
+    text: studioThemes.dark.text,
+    background: studioThemes.dark.background,
+    backgroundElement: studioThemes.dark.surface,
+    backgroundSelected: studioThemes.dark.surfaceRaised,
+    textSecondary: studioThemes.dark.muted,
   },
 } as const;
 

@@ -1,0 +1,15 @@
+# Optional Linux GPU worker. Pin a tested CUDA/cuDNN image digest before use.
+ARG CUDA_IMAGE=nvidia/cuda:12.8.1-cudnn-runtime-ubuntu24.04
+FROM ${CUDA_IMAGE}
+ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1
+RUN apt-get update && apt-get install -y --no-install-recommends python3 python3-venv libgomp1 && rm -rf /var/lib/apt/lists/*
+RUN python3 -m venv /opt/venv
+ENV PATH=/opt/venv/bin:$PATH
+WORKDIR /app
+COPY requirements.txt requirements-models.txt ./
+RUN pip install --no-cache-dir -r requirements.txt -r requirements-models.txt
+COPY app ./app
+COPY voices.json ./voices.json
+RUN useradd --uid 10001 --create-home worker
+USER worker
+CMD ["python", "-m", "app.run"]

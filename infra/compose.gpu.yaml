@@ -1,0 +1,11 @@
+# Optional, untested Linux/NVIDIA override. Do not apply on the current Intel PC.
+services:
+  ollama:
+    gpus: all
+  ai:
+    gpus: all
+    environment:
+      WHISPER_DEVICE: cuda
+      WHISPER_COMPUTE_TYPE: float16
+    build:
+      dockerfile: Dockerfile.cuda

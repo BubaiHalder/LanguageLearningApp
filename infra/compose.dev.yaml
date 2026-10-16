@@ -1,0 +1,6 @@
+services:
+  api:
+    ports: ['${DEV_BIND_IP:-127.0.0.1}:${API_PORT:-3000}:3000']
+networks:
+  # Outbound model provisioning is possible only in explicit development configuration.
+  inference: {internal: false}

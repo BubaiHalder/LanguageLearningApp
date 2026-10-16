@@ -1,4 +1,10 @@
-# Welcome to your Expo app 👋
+# Speak Studio · language-learning prototype
+
+Voice Tutor Phase A is implemented with a mock tutor and local SQLite history. Start with `npm start`, then open Android or iOS. Run `npm test`, `npm run typecheck`, and `npm run lint` for checks. Use Node 24 for the test suite.
+
+See [Phase B5 integration and phone verification](docs/PHASE_B5.md). Local AI mode uses the installed local models/backend, and the owner confirmed recognition, a real tutor reply and audible speech on Android. [Phase A controls](docs/VOICE_TUTOR.md) remain available in mock mode. Web displays a native-storage notice rather than an interactive tutor.
+
+## Original Expo starter instructions
 
 This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
 
@@ -40,6 +46,12 @@ This command will move the starter code to the **app-example** directory and cre
 - To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
 - If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
 - Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
+
+## Local AI backend
+
+The approved design foundations and tutor-first UI are implemented. See [Phase 1–2 changes, test results and Android launch checklist](docs/UI_REDESIGN_PHASES_1_2.md). Speak opens Local AI; mock mode is available in Settings. The redesigned layout still needs physical-phone regression testing.
+
+See [Phase B5: integrated tutor and Android phone test steps](docs/PHASE_B5.md), and [Windows startup, model licensing and Ubuntu deployment preparation](docs/LOCAL_AI_DEPLOYMENT.md). Local AI and mock modes are available. Core Android voice flow is owner-confirmed; the remaining device checklist and iOS verification are open. No production deployment has been performed.
 
 ## Learn more
 
